@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Router } from '@angular/router';
+import { environment } from '../../environments/environment';
 
 @Component({
   selector: 'app-category',
@@ -13,7 +14,7 @@ data: any;
 
   ngOnInit() {
     
-    this.http.get('http://10.117.189.147:8082/INGProduct/api/category').subscribe((response) => {
+    this.http.get(environment.baseurl +'/INGProduct/api/category').subscribe((response) => {
       if (response) {
         this.data = response;
         console.log(response);

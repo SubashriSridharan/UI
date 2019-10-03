@@ -1,19 +1,20 @@
+
+
 <p-panel header="Categories">
     <div class="collapse d-md-flex bg-light pt-2 min-vh-100" id="sidebar">
         <ul class="nav flex-column flex-nowrap">
 
             <li class="nav-item">
-                <a class="nav-link collapsed" href="#submenu1" data-toggle="collapse" data-target="#submenu1"
-                    *ngFor="let res of categoryDetails" (click)="viewData(res.categoryId)">{{res.categoryName}}</a>
-                <hr/>
-                    <div *ngFor="let res of productDetails">
-
+                <a class="nav-link collapsed" href="#submenu1" data-toggle="collapse"
+                    data-target="#submenu1" *ngFor="let res of categoryDetails" (click)="viewData(res.categoryId)">{{res.categoryName}}</a>
+                    <div  *ngFor="let res of productDetails">
+                 <div class="collapse" id="{{res.productId}}" aria-expanded="false">
                     <ul class="flex-column pl-2 nav">
-                        <li class="nav-item"><a class="nav-link py-0"
-                                routerLink="/product:productId">Product List of categoryId {{res.categoryId}} - {{res.productName}}</a></li>
-
+                        <li class="nav-item"><a class="nav-link py-0" routerLink="/product:productId">{{res.productName}}</a></li>
+                        
                     </ul>
-                </div>
+                </div> 
+            </div>
             </li>
 
         </ul>

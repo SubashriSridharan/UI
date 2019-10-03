@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Router } from '@angular/router';
+import { environment } from '../../environments/environment';
 
 @Component({
   selector: 'app-menu',
@@ -14,7 +15,7 @@ export class MenuComponent implements OnInit {
   constructor(private http: HttpClient, private route: Router) { }
 
   ngOnInit() {
-    this.http.get('http://10.117.189.147:8082/INGProduct/api/category').subscribe((response) => {
+    this.http.get(environment.baseurl +'/INGProduct/api/category').subscribe((response) => {
       if (response) {
         let obj = JSON.parse(JSON.stringify(response));
         let list = obj.categoryList;
@@ -26,7 +27,7 @@ export class MenuComponent implements OnInit {
     });
 }
 viewData(categoryId){
-  this.http.get(`http://10.117.189.173:8082/INGProduct/api/category/${categoryId}`).subscribe((response) => {
+  this.http.get(environment.baseurl +`/INGProduct/api/category/${categoryId}`).subscribe((response) => {
     if (response) {
        let obj = JSON.parse(JSON.stringify(response));
        let list1 = obj.productList;
