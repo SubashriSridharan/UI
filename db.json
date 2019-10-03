@@ -1,0 +1,56 @@
+{
+  "posts": [
+    {
+      "id": 1,
+      "title": "json-server",
+      "author": "typicode"
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "body": "some comment",
+      "postId": 1
+    }
+  ],
+  "Employee" : [
+    {
+      "id": "1",
+      "firstname": "Sindhu",
+      "lastname": "Malapati",
+      "age": 24,
+      "role": "Senior Software Engineer"
+    },
+    {
+      "id": "2",
+      "firstname": "Sree",
+      "lastname": "Sandra",
+      "age": 24,
+      "role": "Software Engineer"
+    },
+    {
+      "id": "3",
+      "firstname": "Sampath",
+      "lastname": "Milli",
+      "age": 30,
+      "role": "Team Lead"
+    },
+    {
+      "id": "4",
+      "firstname": "Vikas",
+      "lastname": "Vitta",
+      "age": 28,
+      "role": "Software Engineer"
+    },
+    {
+      "id": "5",
+      "firstname": "Priya",
+      "lastname" : "Varma",
+      "age" : 30,
+      "role" : "Technichal Lead"
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  }
+}

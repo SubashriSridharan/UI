@@ -1,0 +1,14 @@
+<p-dialog header="Uplaod File" [(visible)]="display" [modal]="true" [closable]="true" [responsive]="true" [minY]="auto" [maximizable]="true"
+[baseZIndex]="10000">
+        <p-toast [style]="{marginTop: '80px'}"></p-toast>
+
+        <p-fileUpload name="demo[]" url="./upload.php" (onUpload)="onUpload($event)" multiple="multiple" accept="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet, application/vnd.ms-excel"
+            maxFileSize="1000000">
+            <ng-template pTemplate="content">
+                <ul *ngIf="uploadedFiles.length">
+                    <li *ngFor="let file of uploadedFiles">{{file.name}} - {{file.size}} bytes</li>
+                </ul>
+            </ng-template>
+        </p-fileUpload>
+    </p-dialog>
+    

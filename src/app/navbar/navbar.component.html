@@ -1,0 +1,24 @@
+<nav class="navbar navbar-expand-sm" style="margin-bottom: 1em;background-color: #fe5812;">
+    <!-- Brand/logo -->
+    <a class="navbar-brand" href=""><img src="../assets/ing-logo.jpg" width=15%></a>
+    <!-- Header Text -->
+    <div class="header-text py-3">
+        <h4>ING-Products</h4>
+    </div>
+    <!-- Header Text -->
+    <button type="button" class="dilogue-css" (click)="showDialog()" pButton label="Upload File"></button>
+</nav>
+
+<p-dialog header="Uplaod File" [(visible)]="display" [modal]="true" [closable]="true" [responsive]="true" [minY]="auto" [maximizable]="true"
+[baseZIndex]="10000">
+        <p-toast [style]="{marginTop: '80px'}"></p-toast>
+
+        <p-fileUpload name="demo[]" url="./upload.php" (onUpload)="onUpload($event)" multiple="multiple" accept="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet, application/vnd.ms-excel"
+            maxFileSize="1000000">
+            <ng-template pTemplate="content">
+                <ul *ngIf="uploadedFiles.length">
+                    <li *ngFor="let file of uploadedFiles">{{file.name}} - {{file.size}} bytes</li>
+                </ul>
+            </ng-template>
+        </p-fileUpload>
+    </p-dialog>

@@ -1,0 +1,11 @@
+.header-text{
+    color: white;
+    margin-left: -7em;
+}
+.dilogue-css{
+    float: right;
+    right: 0;
+    position: absolute;
+    right: 20px;
+    color: white;
+}

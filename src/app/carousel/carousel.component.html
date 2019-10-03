@@ -1,0 +1,21 @@
+<!-- Category Card -->
+<p-carousel headerText="Categories" [value]="cars">
+    <ng-template let-car pTemplate="item">
+        <div class="ui-grid ui-grid-responsive">
+            <div class="ui-grid-row">
+                <div class="ui-grid-col-12">
+                    <img class="img-css" src="../../assets/{{car.brand}}" width="70%">
+                </div>
+            </div>
+            <!-- Category Card Accordion -->
+            <div class="ui-grid-row title-css">
+                <!-- <button class="ui-grid-col-12" pButton type="button" routerLink="/book">{{car.title}}</button> -->
+                <div class="ui-grid-col-12">
+                    <app-product-list></app-product-list>
+                </div>
+            </div>
+            <!-- Category Card Accordion -->
+        </div>
+    </ng-template>
+</p-carousel>
+<!-- Category Card -->
